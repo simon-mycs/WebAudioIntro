@@ -1,83 +1,11 @@
-
 <!doctype html>
 
 <html lang="en">
 <head>
-    <div>
-        <button id='play' onclick='playSound(oscillator1)'>PLAY</button>
-        <button id='stop' onclick='stopSound(oscillator1)'>STOP</button>
-        <div>
-            <div class='oscillator' style='display: flex'>
-                <div>
-                    <p>Oscillator 1:</p>
-                    <select id='oscillator1' onchange='updateOscillatorOneType(this.value)'>
-                        <option value='custom'></option>
-                        <option value='sine'>sine</option>
-                        <option value='square'>square</option>
-                        <option value='triangle'>triangle</option>
-                        <option value='sawtooth'>sawtooth</option>
-                    </select>
-                </div>
-                <div>
-                    <p>
-                        <label>
-                            <input id="oscillator1" type="checkbox" checked='true' onclick='mute(this)'>
-                            <span class="slider"></span>
-                        </label>    
-                    </p>
-                    <input type='range' id='oscillator1' value = '0' min='-50' max='50' step='1' class='slider' oninput='detuneOscillator(this.value, this.id)' ondblclick="this.value=0">
-                </div>
-                <div>
-                    <p>
-                        <button id='octaveDown1' onclick='transposeOctaveDown(this.id)'>-ve</button>
-                        <button id='octaveUp1' onclick='transposeOctaveUp(this.id)'>+ve</button>
-                    </p>
-                </div>
-                <div>
-                    <p>
-                        <input type='range' id='transpose1' value = 'oscillator1.getFrequency()' min='0' max='1000' step='1' class='slider' oninput='transpose(this.value)'>
-                    </p>
-                </div>
-            </div>
-            <div class = 'oscillator' style='display: flex'>
-                <div>
-                    <p>Oscillator 2:</p>
-                    <select id='oscillator2' onchange='updateOscillatorTwoType(this.value)'>
-                        <option value='custom'></option>
-                        <option value='sine'>sine</option>
-                        <option value='square'>square</option>
-                        <option value='triangle'>triangle</option>
-                        <option value='sawtooth'>sawtooth</option>
-                    </select>
-                 </div>
-                <div>
-                    <p>
-                        <label>
-                            <input id="oscillator2" type="checkbox" checked='true' onclick='mute(this)'>
-                            <span class="slider"></span>
-                        </label>    
-                    </p>
-                    <input type='range' id='oscillator2' value = '0' min='-50' max='50' step='1' class='slider' oninput='detuneOscillator(this.value, this.id)' ondblclick="this.value=0">
-                </div>
-                <div>
-                    <p>
-                        <button id='octaveDown2' onclick='transposeOctaveDown(this.id)'>-ve</button>
-                        <button id='octaveDown2' onclick='transposeOctaveUp(this.id)'>+ve</button>
-                    </p>
-                </div>
-            </div>
-        </div>
-        <p>Filter:</p>
-        <input type='range' id='filter' value = '2000' min='0' max='2000' step='1' class='slider' oninput='filterCutoff(this.value)'>
-        <p>Gain:</p>
-        <input type='range' id='volume' value = '0' min='0.01' max='0.30' step='0.01' class='slider' oninput='adjustVolume(this.value)'>
-    
-    </div>
-
-
 </head>
 
 <body>
+
     <script src='./script.js'></script>
 </body>
 </html>
